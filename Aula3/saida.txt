@@ -1,0 +1,15 @@
+Verification of concurrent and distributed programs is a dynamic field. 
+The basic concept in defining the semantics of any program is that of 
+the state, consisting of the control pointers and the contents of the
+ memory. Executing a statement of a program simply transforms one 
+ state into another. The correctness specification of a sequential 
+ program is straightforward: it relates the final state at termination 
+ to the initial state. Concurrent programs are much more difficult 
+ to verify, both because of the nondeterminism nature of the computation
+ and also because of the complexity of the correctness specification. 
+ There are basically two classes of specifications: safety and liveness 
+ properties. A safety property must be true at all states so one must 
+ check that is true at all states. The are two ways of doing this: 
+ generate all possible states and check that each one satisfies the 
+property or show 
+that any state that may be generated satisfies the property.
