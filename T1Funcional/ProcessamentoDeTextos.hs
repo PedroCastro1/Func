@@ -1,4 +1,6 @@
-module ProcessamentoDeTextos where 
+module ProcessamentoDeTextos where
+
+import Data.Char
 
 whitespaces = ['\n', '\t', ' ']
 
@@ -44,4 +46,15 @@ dropLine:: Int -> [Word] -> Line
 dropLine 0 _ = []
 dropLine _ [] = []
 dropLine len (x:xs)
-        | 
+
+toLowerAndFilter = filter (`elem` ['a'..'z']) . map toLower
+
+isPalindrome:: String -> Bool
+isPalindrome str
+            | toLowerAndFilter str == toLowerAndFilter (myReverse str) = True
+            | otherwise = False
+
+
+myReverse:: [a]-> [a]
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
